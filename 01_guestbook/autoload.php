@@ -2,6 +2,7 @@
 
 function __autoload($class)
 {
-    $path = __DIR__ . '/classes/' . $class . '.php';
+    $folder = str_replace('\\', '/', $class);
+    $path = __DIR__ . '/' . $folder . '.php';
     require_once $path;
 }
