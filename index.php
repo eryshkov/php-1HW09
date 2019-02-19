@@ -10,13 +10,12 @@
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
 
-    <title>HomeWork 8</title>
+    <title>HomeWork 9</title>
 </head>
 <body>
 <p></p>
 <div class="container">
-    <a href="/test.php" class="btn btn-primary">Test</a>
-    <a href="/03_news/news.php" class="btn btn-primary">News</a>
+    <a href="/01_guestbook/" class="btn btn-primary">GuestBook</a>
 
 </div>
 </body>
