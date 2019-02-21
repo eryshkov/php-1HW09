@@ -45,11 +45,9 @@ class Page
      */
     public function __construct(array $haystack)
     {
-        foreach ($haystack as $element) {
-            $this->pageName = $element['pageName'];
-            $this->isHidden = $element['isHidden'];
-            $this->order = $element['order'];
-            $this->displayName = $element['displayName'];
-        }
+            $this->pageName = $haystack['pageName'];
+            $this->isHidden = $haystack['isHidden'];
+            $this->order = $haystack['order'];
+            $this->displayName = $haystack['displayName'];
     }
 }
