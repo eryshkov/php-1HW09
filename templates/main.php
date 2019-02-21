@@ -26,9 +26,21 @@
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Обо мне</li>
-                    <li class="breadcrumb-item"><a href="/gallery/">Фотогалерея</a></li>
-                    <li class="breadcrumb-item"><a href="/guestbook/">Гостевая книга</a></li>
+                    <?php
+                    $currentPageName = $currentPage->getPageName();
+                    foreach ($allPages->getPages() as $page) {
+                        if ($currentPageName === $page->getPageName()) {
+                            ?>
+                            <li class="breadcrumb-item active"
+                                aria-current="page"><?php echo $page->getDisplayName(); ?></li><?php
+                        } else {
+                            ?>
+                            <li class="breadcrumb-item"><a
+                                    href="/index.php?page=<?php echo $page->getPageName() ?>"><?php echo $page->getDisplayName(); ?></a>
+                            </li><?php
+                        }
+                    }
+                    ?>
                 </ol>
             </nav>
         </div>
@@ -37,8 +49,8 @@
     <div class="row">
         <div class="col">
             <!--            Content goes here-->
-            <?php var_dump($currentPage);
-            var_dump($allPages);
+            <?php //var_dump($currentPage);
+            //var_dump($allPages);
             ?>
         </div>
     </div>

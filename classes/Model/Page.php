@@ -3,6 +3,9 @@ namespace Model;
 class Page
 {
     protected $pageName;
+    protected $isHidden;
+    protected $order;
+    protected $displayName;
 
     /**
      * @return string
@@ -15,7 +18,7 @@ class Page
     /**
      * @return bool
      */
-    public function getisHidden():bool
+    public function isHidden():bool
     {
         return $this->isHidden;
     }
@@ -35,9 +38,6 @@ class Page
     {
         return $this->displayName;
     }
-    protected $isHidden;
-    protected $order;
-    protected $displayName;
 
     /**
      * Page constructor.
