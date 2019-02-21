@@ -1,5 +1,5 @@
 <?php
-
+namespace Model;
 class DB
 {
     protected $dbh;
@@ -16,7 +16,7 @@ class DB
         $dsn1 = implode(':', [$config['dbType'], $dbHost, $config['dbPort']]);
         $dsn = implode(';', [$dsn1, $dbName]);
 
-        $this->dbh = new PDO($dsn, $dbUserName, $dbPassword);
+        $this->dbh = new \PDO($dsn, $dbUserName, $dbPassword);
     }
 
     public function execute(string $sql):bool
