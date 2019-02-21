@@ -17,7 +17,7 @@
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
 
-    <title>HomeWork 9</title>
+    <title>Personal Site</title>
 </head>
 <body>
 <p></p>
