@@ -11,7 +11,7 @@
 </p>
 
 ## Информация для проверяющего
-* 
+* отсутствует
 
 ## Main functionality
 * uses MySQL database
