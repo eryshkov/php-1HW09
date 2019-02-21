@@ -12,14 +12,16 @@ if (isset($_GET['page'])) {
 
 $sql = 'SELECT * FROM pages WHERE pageName=:pageName';
 $currentPage = $dataBase->query($sql, [':pageName' => $pageName]);
-//var_dump($currentPage['0']);
-$currentPage = new Page($currentPage['0']);
 
-$sql = 'SELECT * FROM pages';
-$allPages = $dataBase->query($sql, []);
-//var_dump($allPages);
+if (isset($currentPage['0'])) {
+    $currentPage = new Page($currentPage['0']);
 
-$view = new View();
-$view->assign('currentPage', $currentPage);
-$view->assign('allPages', $allPages);
-$view->display(__DIR__ . '/templates/main.php');
+    $sql = 'SELECT * FROM pages ORDER BY `order`';
+    $allPages = $dataBase->query($sql, []);
+    $allPages = new Pages($allPages);
+
+    $view = new View();
+    $view->assign('currentPage', $currentPage);
+    $view->assign('allPages', $allPages);
+    $view->display(__DIR__ . '/templates/main.php');
+}

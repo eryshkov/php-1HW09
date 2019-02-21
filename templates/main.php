@@ -37,7 +37,9 @@
     <div class="row">
         <div class="col">
             <!--            Content goes here-->
-            <?php var_dump($currentPage) ; ?>
+            <?php var_dump($currentPage);
+            var_dump($allPages);
+            ?>
         </div>
     </div>
 </div>
