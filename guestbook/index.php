@@ -27,7 +27,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item" aria-current="page"><a href="/">Обо мне</a></li>
-                    <li class="breadcrumb-item"><a href="/gallery.php">Фотогалерея</a></li>
+                    <li class="breadcrumb-item"><a href="/gallery/">Фотогалерея</a></li>
                     <li class="breadcrumb-item active">Гостевая книга</li>
                 </ol>
             </nav>

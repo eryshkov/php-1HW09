@@ -22,13 +22,14 @@
 <body>
 <p></p>
 <div class="container">
-    <div class="row">
+    <div class="row" id="menu">
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item" aria-current="page"><a href="/">Обо мне</a></li>
-                    <li class="breadcrumb-item active">Фотогалерея</li>
-                    <li class="breadcrumb-item"><a href="/guestbook.php">Гостевая книга</a></li>
+                    <li class="breadcrumb-item"><a href="/">Обо мне</a></li>
+                    <li class="breadcrumb-item"><a href="/gallery/">Фотогалерея</a></li>
+                    <li class="breadcrumb-item"><a href="/guestbook/">Гостевая книга</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Admin</li>
                 </ol>
             </nav>
         </div>
