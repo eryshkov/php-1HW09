@@ -24,4 +24,6 @@ if (isset($currentPage['0'])) {
     $view->assign('currentPage', $currentPage);
     $view->assign('allPages', $allPages);
     $view->display(__DIR__ . '/templates/main.php');
+} else {
+    ?>Page is not found<?php
 }
