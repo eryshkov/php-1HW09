@@ -36,7 +36,8 @@
     </div>
     <div class="row">
         <div class="col">
-<!--            Content goes here-->
+            <!--            Content goes here-->
+            <?php var_dump($currentPage) ; ?>
         </div>
     </div>
 </div>
