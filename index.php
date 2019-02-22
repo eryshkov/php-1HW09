@@ -6,11 +6,12 @@ $dataBase = new \Model\DB();
 
 if (isset($_GET['page'])) {
     $pageName = $_GET['page'];
+} else {
+    $pageName = '';
 }
 
 $currentPage = new \Model\Page();
 $currentPage->setPageFromDB($pageName);
-
 
 $allPages = new \Model\Pages();
 
