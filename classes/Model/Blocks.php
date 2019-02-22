@@ -4,7 +4,18 @@ namespace Model;
 
 class Blocks
 {
+    /**
+     * @var Block[]
+     */
     protected $blocks;
+
+    /**
+     * @return Block[]
+     */
+    public function getAll():array
+    {
+        return $this->blocks;
+    }
 
     public function __construct(string $pageName)
     {

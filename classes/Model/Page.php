@@ -49,7 +49,7 @@ class Page
         if (isset($currentPage['0'])) {
             $this->pageName = $currentPage['0']['pageName'];
             $this->isHidden = (bool)$currentPage['0']['isHidden'];
-            $this->order = $currentPage['0']['order'];
+            $this->order = (int)$currentPage['0']['order'];
             $this->displayName = $currentPage['0']['displayName'];
         } else {
             $allpages = new Pages();
@@ -66,7 +66,7 @@ class Page
     {
             $this->pageName = $haystack['pageName'];
             $this->isHidden = (bool)$haystack['isHidden'];
-            $this->order = $haystack['order'];
+            $this->order = (int)$haystack['order'];
             $this->displayName = $haystack['displayName'];
     }
 
