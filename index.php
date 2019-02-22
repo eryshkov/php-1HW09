@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/autoload.php';
 
-$dataBase = new \Model\DB(__DIR__ . '/config.php');
+$dataBase = new \Model\DB();
 
 $pageName = 'about';
 

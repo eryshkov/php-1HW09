@@ -1,7 +1,7 @@
 <?php
 
 $result = [
-    'dbType'     => 'mysql',
+    'dbDriver'     => 'mysql',
     'dbHost'     => 'php-1hw09.mac',
     'dbPort'     => '8889',
     'dbName'     => 'hw09',
