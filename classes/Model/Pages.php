@@ -1,4 +1,5 @@
 <?php
+
 namespace Model;
 class Pages
 {
@@ -13,6 +14,18 @@ class Pages
     public function getPages(): array
     {
         return $this->pages;
+    }
+
+    /**
+     * @return Page|null
+     */
+    public function getFirstPage(): Page
+    {
+        foreach ($this->pages as $page) {
+            return $page;
+        }
+
+        return null;
     }
 
     /**

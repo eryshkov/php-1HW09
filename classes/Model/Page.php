@@ -52,7 +52,13 @@ class Page
             $this->order = $currentPage['0']['order'];
             $this->displayName = $currentPage['0']['displayName'];
         } else {
-            //Get first of Pages here
+            $allpages = new Pages();
+            $firstPage = $allpages->getFirstPage();
+
+            $this->pageName = $firstPage->getPageName();
+            $this->isHidden = (bool)$firstPage->isHidden;
+            $this->order = $firstPage->getOrder();
+            $this->displayName = $firstPage->getDisplayName();
         }
     }
 
