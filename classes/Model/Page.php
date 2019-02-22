@@ -1,4 +1,5 @@
 <?php
+
 namespace Model;
 class Page
 {
@@ -10,7 +11,7 @@ class Page
     /**
      * @return string
      */
-    public function getPageName():string
+    public function getPageName(): string
     {
         return $this->pageName;
     }
@@ -18,7 +19,7 @@ class Page
     /**
      * @return bool
      */
-    public function isHidden():bool
+    public function isHidden(): bool
     {
         return $this->isHidden;
     }
@@ -26,7 +27,7 @@ class Page
     /**
      * @return int
      */
-    public function getOrder():int
+    public function getOrder(): int
     {
         return $this->order;
     }
@@ -34,20 +35,33 @@ class Page
     /**
      * @return string
      */
-    public function getDisplayName():string
+    public function getDisplayName(): string
     {
         return $this->displayName;
     }
 
-    /**
-     * Page constructor.
-     * @param array $haystack
-     */
-    public function __construct(array $haystack)
+    public function setPageFromDB(string $pageName):void
+    {
+        $dataBase = new DB();
+        $sql = 'SELECT * FROM pages WHERE pageName=:pageName';
+        $currentPage = $dataBase->query($sql, [':pageName' => $pageName]);
+
+        if (isset($currentPage['0'])) {
+            $this->pageName = $currentPage['0']['pageName'];
+            $this->isHidden = (bool)$currentPage['0']['isHidden'];
+            $this->order = $currentPage['0']['order'];
+            $this->displayName = $currentPage['0']['displayName'];
+        } else {
+            //Get first of Pages here
+        }
+    }
+
+    public function setPageFromArray(array $haystack):void
     {
             $this->pageName = $haystack['pageName'];
-            $this->isHidden = $haystack['isHidden'];
+            $this->isHidden = (bool)$haystack['isHidden'];
             $this->order = $haystack['order'];
             $this->displayName = $haystack['displayName'];
     }
+
 }

@@ -19,10 +19,16 @@ class Pages
      * Pages constructor.
      * @param array $haystack
      */
-    public function __construct(array $haystack)
+    public function __construct()
     {
-        foreach ($haystack as $element) {
-            $page = new Page($element);
+        $dataBase = new DB();
+
+        $sql = 'SELECT * FROM pages ORDER BY `order`';
+        $allPages = $dataBase->query($sql, []);
+
+        foreach ($allPages as $element) {
+            $page = new Page();
+            $page->setPageFromArray($element);
             $this->pages[] = $page;
         }
     }
