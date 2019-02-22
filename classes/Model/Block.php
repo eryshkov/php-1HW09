@@ -11,7 +11,7 @@ class Block
     protected $blockText;
     protected $imageName;
 
-    public function setPageFromArray(array $haystack):void
+    public function setBlockFromArray(array $haystack):void
     {
         $this->blockName = $haystack['blockName'];
         $this->pageName = $haystack['pageName'];
