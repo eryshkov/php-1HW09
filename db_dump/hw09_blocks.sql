@@ -1,0 +1,2 @@
+INSERT INTO hw09.blocks (id, blockName, pageName, isHidden, blockText, imageName, `order`) VALUES (1, 'text', 'about', 0, 'Text about me', null, 1);
+INSERT INTO hw09.blocks (id, blockName, pageName, isHidden, blockText, imageName, `order`) VALUES (2, 'image', null, null, null, null, 1);

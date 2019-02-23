@@ -6,12 +6,12 @@
 </div>
 
 <p align="center">
-<img src="https://img.shields.io/badge/PHP-7.2-orange.svg" alt="PHP-7.2"/>
+<img src="https://img.shields.io/badge/PHP-7.1-orange.svg" alt="PHP-7.1"/>
 <img src="https://img.shields.io/badge/licence-MIT-lightgray.svg" alt="Licence MIT"/>
 </p>
 
 ## Информация для проверяющего
-* отсутствует
+* бамп БД находится в папке `db_dump`
 
 ## Main functionality
 * uses MySQL database
