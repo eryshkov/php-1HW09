@@ -9,6 +9,24 @@ class Pages
     protected $pages;
 
     /**
+     * Pages constructor.
+     * @param array $haystack
+     */
+    public function __construct()
+    {
+        $dataBase = new DB();
+
+        $sql = 'SELECT * FROM pages ORDER BY `order`';
+        $allPages = $dataBase->query($sql, []);
+
+        foreach ($allPages as $element) {
+            $page = new Page();
+            $page->setPageFromArray($element);
+            $this->pages[] = $page;
+        }
+    }
+
+    /**
      * @return Page[]
      */
     public function getPages(): array
@@ -26,24 +44,6 @@ class Pages
         }
 
         return null;
-    }
-
-    /**
-     * Pages constructor.
-     * @param array $haystack
-     */
-    public function __construct()
-    {
-        $dataBase = new DB();
-
-        $sql = 'SELECT * FROM pages ORDER BY `order`';
-        $allPages = $dataBase->query($sql, []);
-
-        foreach ($allPages as $element) {
-            $page = new Page();
-            $page->setPageFromArray($element);
-            $this->pages[] = $page;
-        }
     }
 
 

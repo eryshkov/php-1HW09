@@ -9,14 +9,6 @@ class Blocks
      */
     protected $blocks = [];
 
-    /**
-     * @return \View\Block[]|null
-     */
-    public function getAll(): array
-    {
-        return $this->blocks;
-    }
-
     public function __construct(string $pageName)
     {
         $dataBase = new DB();
@@ -28,5 +20,13 @@ class Blocks
             $block->setBlockFromArray($item);
             $this->blocks[] = $block;
         }
+    }
+
+    /**
+     * @return \View\Block[]|null
+     */
+    public function getAll(): array
+    {
+        return $this->blocks;
     }
 }
