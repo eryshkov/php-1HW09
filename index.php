@@ -13,12 +13,12 @@ if (isset($_GET['page'])) {
 $currentPage = new \Model\Page();
 $currentPage->setPageFromDB($pageName);
 
-$currentPageBlocks = new \Model\Blocks($currentPage);
+$currentPageBlocks = new \Model\Blocks($pageName);
 
 $allPages = new \Model\Pages();
 
 $view = new \View\View();
 $view->assign('currentPage', $currentPage);
 $view->assign('allPages', $allPages);
-$view->assign('blocks', $currentPageBlocks);
+$view->assign('blocksObject', $currentPageBlocks);
 $view->display(__DIR__ . '/templates/main.php');

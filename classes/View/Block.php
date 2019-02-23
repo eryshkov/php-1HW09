@@ -1,6 +1,6 @@
 <?php
 
-namespace Model;
+namespace View;
 
 class Block
 {
@@ -34,7 +34,7 @@ class Block
      */
     protected $imageName;
 
-    public function setBlockFromArray(array $haystack):void
+    public function setBlockFromArray(array $haystack): void
     {
         $this->blockName = $haystack['blockName'];
         $this->pageName = $haystack['pageName'];
@@ -44,12 +44,8 @@ class Block
         $this->imageName = $haystack['imageName'];
     }
 
-    public function display():void
+    public function display(): void
     {
-        switch (true) {
-            case 'text' === $this->blockName:
-                //text block goes here
-                break;
-        }
+        require __DIR__ . '/../../templates/blocks/' . $this->blockName . '.php';
     }
 }

@@ -46,14 +46,14 @@
         </div>
 
     </div>
-    <div class="row">
-        <div class="col">
-            <!--            Content goes here-->
-            <?php //var_dump($currentPage);
-            //var_dump($allPages);
-            ?>
-        </div>
-    </div>
+    <?php
+    $blocks = $blocksObject->getAll();
+    if (null !== $blocks) {
+        foreach ($blocks as $block) {
+            $block->display();
+        }
+    }
+    ?>
 </div>
 </body>
 </html>

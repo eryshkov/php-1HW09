@@ -5,14 +5,14 @@ namespace Model;
 class Blocks
 {
     /**
-     * @var Block[]
+     * @var \View\Block[]
      */
     protected $blocks;
 
     /**
-     * @return Block[]
+     * @return \View\Block[]|null
      */
-    public function getAll():array
+    public function getAll(): ?array
     {
         return $this->blocks;
     }
@@ -24,7 +24,7 @@ class Blocks
         $blocks = $dataBase->query($sql, [':pageName' => $pageName]);
 
         foreach ($blocks as $item) {
-            $block = new Block();
+            $block = new \View\Block();
             $block->setBlockFromArray($item);
             $this->blocks[] = $block;
         }
