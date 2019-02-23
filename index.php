@@ -13,9 +13,9 @@ if (isset($_GET['page'])) {
 $currentPage = new \Model\Page();
 $currentPage->setPageFromDB($pageName);
 
-$currentPageBlocks = new \Model\Blocks($pageName);
-
 $allPages = new \Model\Pages();
+
+$currentPageBlocks = new \Model\Blocks($pageName);
 
 $view = new \View\View();
 $view->assign('currentPage', $currentPage);
