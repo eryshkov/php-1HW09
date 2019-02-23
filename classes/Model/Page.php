@@ -3,10 +3,10 @@
 namespace Model;
 class Page
 {
-    protected $pageName;
-    protected $isHidden;
-    protected $order;
-    protected $displayName;
+    protected $pageName = '';
+    protected $isHidden = false;
+    protected $order = 0;
+    protected $displayName = '';
 
     /**
      * @return string

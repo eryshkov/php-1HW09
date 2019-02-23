@@ -7,32 +7,32 @@ class Block
     /**
      * @var string
      */
-    protected $blockName;
+    protected $blockName = '';
 
     /**
      * @var string
      */
-    protected $pageName;
+    protected $pageName = '';
 
     /**
      * @var bool
      */
-    protected $isHidden;
+    protected $isHidden = false;
 
     /**
      * @var int
      */
-    protected $order;
+    protected $order = 0;
 
     /**
      * @var string
      */
-    protected $blockText;
+    protected $blockText = '';
 
     /**
      * @var string
      */
-    protected $imageName;
+    protected $imageName = '';
 
     public function setBlockFromArray(array $haystack): void
     {

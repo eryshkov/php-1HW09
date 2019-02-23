@@ -6,7 +6,7 @@ class Pages
     /**
      * @var Page[]
      */
-    protected $pages;
+    protected $pages = [];
 
     /**
      * Pages constructor.
