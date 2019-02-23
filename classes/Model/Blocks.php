@@ -7,12 +7,12 @@ class Blocks
     /**
      * @var \View\Block[]
      */
-    protected $blocks;
+    protected $blocks = [];
 
     /**
      * @return \View\Block[]|null
      */
-    public function getAll(): ?array
+    public function getAll(): array
     {
         return $this->blocks;
     }
