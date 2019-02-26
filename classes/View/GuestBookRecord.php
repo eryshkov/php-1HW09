@@ -13,7 +13,6 @@ class GuestBookRecord extends View
 
     public function show(): void
     {
-        var_dump($this->storage);
-//        $this->display(__DIR__ . '/../../templates/blocks/' . $this->storage['blockName'] . '.php');
+        $this->display(__DIR__ . '/../../templates/blocks/guestBookRecord.php');
     }
 }
