@@ -50,7 +50,8 @@
     $blocks = $blocksObject->getAll();
 
     foreach ($blocks as $block) {
-        $block->display();
+        $block->show();
+        var_dump($block);
     }
     ?>
 </div>
