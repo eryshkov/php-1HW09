@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col">
         <?php
-        $guestBookRecords = new \Model\GuestBookRecords();
+        $guestBookRecords = new \Model\GuestBook();
 
         $records = $guestBookRecords->getVisible();
 

@@ -2,7 +2,7 @@
 
 namespace Model;
 
-class GuestBookRecords
+class GuestBook
 {
     /**
      * @param string $sql
