@@ -1,6 +1,3 @@
 <p>
-    <?php echo $text; ?>
-</p>
-<p>
-    <?php echo $author; ?>
+    <?php echo $author . ': ' . $text; ?>
 </p>
