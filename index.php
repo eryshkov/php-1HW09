@@ -2,8 +2,6 @@
 
 require_once __DIR__ . '/autoload.php';
 
-$dataBase = new \Model\DB();
-
 if (isset($_GET['page'])) {
     $pageName = $_GET['page'];
 } else {
