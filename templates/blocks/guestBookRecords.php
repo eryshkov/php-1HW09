@@ -3,7 +3,9 @@
         <?php
         $guestBookRecords = new \Model\GuestBookRecords();
 
-        foreach ($guestBookRecords->getAll() as $record) {
+        $records = $guestBookRecords->getVisible();
+
+        foreach ($records as $record) {
             $record->show();
         }
         ?>
