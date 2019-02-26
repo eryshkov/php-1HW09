@@ -25,6 +25,6 @@ class View
         foreach ($this->storage as $key => $value) {
             $$key = $value;
         }
-        require_once $template;
+        require $template;
     }
 }

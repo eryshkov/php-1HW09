@@ -23,7 +23,7 @@ class Blocks
     }
 
     /**
-     * @return \View\Block[]|null
+     * @return \View\Block[]
      */
     public function getAll(): array
     {

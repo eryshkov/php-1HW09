@@ -48,10 +48,8 @@
     </div>
     <?php
     $blocks = $blocksObject->getAll();
-
     foreach ($blocks as $block) {
         $block->show();
-        var_dump($block);
     }
     ?>
 </div>

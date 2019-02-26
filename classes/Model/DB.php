@@ -14,6 +14,7 @@ class DB
         $dsn = $config['dbDriver'] . ':host=' . $config['dbHost'] . ';port=' . $config['dbPort'] . ';dbname=' . $config['dbName'];
 
         $this->dbh = new \PDO($dsn, $dbUserName, $dbPassword);
+        $this->dbh->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_NAMED);
     }
 
     public function execute(string $sql):bool
