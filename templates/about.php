@@ -27,16 +27,15 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <?php
-                    $currentPageName = $currentPage->getPageName();
-                    foreach ($allPages->getPages() as $page) {
-                        if ($currentPageName === $page->getPageName()) {
+                    foreach ($menuItems as $item) {
+                        if ($item->isCurrent()) {
                             ?>
                             <li class="breadcrumb-item active"
-                                aria-current="page"><?php echo $page->getDisplayName(); ?></li><?php
+                                aria-current="page"><?php echo $item->getDisplayName(); ?></li><?php
                         } else {
                             ?>
                             <li class="breadcrumb-item"><a
-                                    href="/index.php?page=<?php echo $page->getPageName() ?>"><?php echo $page->getDisplayName(); ?></a>
+                                    href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
                             </li><?php
                         }
                     }
@@ -46,8 +45,15 @@
         </div>
 
     </div>
-    <?php
-
+    <?php foreach ($textBlocks as $block) {
+        ?>
+        <div class="row">
+            <div class="col">
+                <p><?php echo $block->getText(); ?></p>
+            </div>
+        </div>
+        <?php
+    }
     ?>
 </div>
 </body>
