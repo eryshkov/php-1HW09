@@ -56,6 +56,18 @@
         }
         ?>
     </div>
+    <?php if (null !== $currentUser) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <form action="/saveImage.php" method="post" enctype="multipart/form-data">
+                    <label>Новая картинка:</label><input type="file" name="image">
+                    <br>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div><?php
+    } ?>
 </div>
 </body>
 </html>
