@@ -47,10 +47,7 @@
 
     </div>
     <?php
-    $blocks = $blocksObject->getAll();
-    foreach ($blocks as $block) {
-        $block->show();
-    }
+
     ?>
 </div>
 </body>
