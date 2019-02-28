@@ -49,7 +49,8 @@
         ?>
         <div class="row">
             <div class="col">
-                <p>Welcome back </p><?php echo $currentUser->getUserName();?>
+                <p>Welcome back <strong><?php echo $currentUser->getUserName(); ?></strong>! Admin mode is enabled for
+                    you</p>
             </div>
         </div>
         <?php
