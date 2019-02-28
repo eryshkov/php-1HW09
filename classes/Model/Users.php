@@ -12,13 +12,13 @@ class Users
     {
         $db = new DB();
         $sql = 'SELECT * FROM users WHERE userName=:userName';
-        $user = $db->query($sql, [':userName' => $userName]);
+        $users = $db->query($sql, [':userName' => $userName]);
 
-        if (isset($user['userName'])) {
+        foreach ($users as $user) {
             return new User($user['userName'], $user['password']);
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     /**
