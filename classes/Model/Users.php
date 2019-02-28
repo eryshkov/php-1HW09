@@ -5,23 +5,6 @@ namespace Model;
 class Users
 {
     /**
-     * @return User[]
-     */
-    public function getUsersList(): array
-    {
-        $db = new DB();
-        $sql = 'SELECT * FROM users ORDER BY id';
-        $users = $db->query($sql, []);
-
-        $result = [];
-        foreach ($users as $user) {
-            $result[] = new User($user['userName'], $user['password']);
-        }
-
-        return $result;
-    }
-
-    /**
      * @param string $userName
      * @return User|null
      */
@@ -36,6 +19,23 @@ class Users
         } else {
             return null;
         }
+    }
+
+    /**
+     * @return User[]
+     */
+    public function getUsersList(): array
+    {
+        $db = new DB();
+        $sql = 'SELECT * FROM users ORDER BY id';
+        $users = $db->query($sql, []);
+
+        $result = [];
+        foreach ($users as $user) {
+            $result[] = new User($user['userName'], $user['password']);
+        }
+
+        return $result;
     }
 
     /**
