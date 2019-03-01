@@ -14,7 +14,8 @@ class Users
         $sql = 'SELECT * FROM users WHERE userName=:userName';
         $users = $db->query($sql, [':userName' => $userName]);
 
-        foreach ($users as $user) {
+        $user = reset($users);
+        if (false !== $user) {
             return new \Model\User($user['userName'], $user['password']);
         }
 
@@ -65,8 +66,6 @@ class Users
         } else {
             return false;
         }
-
-
     }
 
     /**
