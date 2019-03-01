@@ -8,6 +8,7 @@ if (isset($_POST['login'])) {
 } else {
     $userName = '';
 }
+
 if (isset($_POST['password'])) {
     $userPassword = $_POST['password'];
 } else {

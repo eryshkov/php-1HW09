@@ -53,11 +53,11 @@ class Users
     }
 
     /**
-     * @param $login
-     * @param $password
+     * @param string $login
+     * @param string $password
      * @return bool
      */
-    public function checkPassword($login, $password): bool
+    public function checkPassword(string $login, string $password): bool
     {
         $user = $this->getUserWith($login);
 
