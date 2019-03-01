@@ -11,7 +11,7 @@ if (null === $currentUser) {
     exit();
 }
 
-$imageUploader = new \Model\Uploader('image');
+$imageUploader = new \Services\Uploader('image');
 $uploadResult = $imageUploader->upload();
 
 if (true === $uploadResult) {
