@@ -21,5 +21,11 @@ if (true === $uploadResult) {
     header('Location:' . '/gallery.php');
     exit;
 } else {
-    ?>Не удалось сохранить этот файл на сервере<?php
+    $menu = new \Model\Menu();
+    $menuItems = $menu->getVisibleItems('gallery');
+
+    $view = new \View\View();
+    $view->assign('menuItems', $menuItems);
+    $view->assign('info', 'Не удалось сохранить этот файл на сервере');
+    $view->display(__DIR__ . '/templates/info.php');
 }
