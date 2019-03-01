@@ -8,7 +8,7 @@ class Menu
      * @param string $onPage
      * @return MenuItem[]
      */
-    public function getVisible(string $onPage): array
+    public function getVisibleItems(string $onPage): array
     {
         $db = new DB();
         $sql = 'SELECT * FROM pages WHERE isHidden=FALSE ORDER BY `order`';

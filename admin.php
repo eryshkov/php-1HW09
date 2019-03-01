@@ -22,7 +22,7 @@ if ($users->checkPassword($userName, $userPassword)) {
 $currentUser = $users->getCurrentUserFrom($_SESSION);
 
 $menu = new \Model\Menu();
-$menuItems = $menu->getVisible('admin');
+$menuItems = $menu->getVisibleItems('admin');
 
 $view = new \View\View();
 $view->assign('menuItems', $menuItems);

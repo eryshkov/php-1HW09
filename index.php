@@ -3,10 +3,10 @@
 require_once __DIR__ . '/autoload.php';
 
 $menu = new \Model\Menu();
-$menuItems = $menu->getVisible('index');
+$menuItems = $menu->getVisibleItems('index');
 
 $text = new \Model\AboutText();
-$textBlocks = $text->getVisible();
+$textBlocks = $text->getVisibleBlocks();
 
 $view = new \View\View();
 $view->assign('menuItems', $menuItems);

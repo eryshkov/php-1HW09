@@ -7,7 +7,7 @@ class AboutText
     /**
      * @return AboutTextBlock[]
      */
-    public function getVisible(): array
+    public function getVisibleBlocks(): array
     {
         $db = new DB();
         $sql = 'SELECT * FROM about WHERE isHidden=FALSE ORDER BY `order`';

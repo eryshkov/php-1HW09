@@ -4,7 +4,7 @@ session_start();
 require_once __DIR__ . '/autoload.php';
 
 $menu = new \Model\Menu();
-$menuItems = $menu->getVisible('gallery');
+$menuItems = $menu->getVisibleItems('gallery');
 
 $images = new \Model\Images();
 $imagesList = $images->getAllImages();
