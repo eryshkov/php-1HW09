@@ -15,7 +15,8 @@ $imageUploader = new \Model\Uploader('image');
 $uploadResult = $imageUploader->upload();
 
 if (true === $uploadResult) {
-    writeLog(__DIR__ . '/img/log.txt', $userName, 'image');
+    $log = new \Model\Log();
+    $log->write($currentUser->getUserName(), 'image is saved');
 
     header('Location:' . '/gallery.php');
     exit;

@@ -4,8 +4,15 @@ namespace Model;
 
 class Log
 {
+    /**
+     * @var string
+     */
     protected $fileName = __DIR__ . '/../../img/log.txt';
 
+    /**
+     * @param string $userName
+     * @param string $info
+     */
     public function write(string $userName, string $info): void
     {
         $date = date(DATE_ATOM);
