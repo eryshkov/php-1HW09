@@ -60,6 +60,7 @@
         ?>
         <div class="row">
             <div class="col-auto">
+                <p></p>
                 <form action="/saveImage.php" method="post" enctype="multipart/form-data">
                     <label>Новая картинка:</label><input type="file" name="image">
                     <br>

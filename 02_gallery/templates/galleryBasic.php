@@ -43,7 +43,7 @@
     <?php if (null !== $userName) {
         ?>
         <div class="row">
-            <form action="/02_gallery/saveImage.php" method="post" enctype="multipart/form-data">
+            <form action="/saveImage.php" method="post" enctype="multipart/form-data">
                 <label>Новая картинка:</label><input type="file" name="image">
                 <br>
                 <button type="submit">Send</button>
