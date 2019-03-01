@@ -9,8 +9,8 @@ $menuItems = $menu->getVisibleItems('gallery');
 $images = new \Model\Images();
 $imagesList = $images->getAllImages();
 
-$users = new \Model\Users();
-$currentUser = $users->getCurrentUserFrom($_SESSION);
+$users = new \Services\Users();
+$currentUser = $users->getCurrentUser();
 
 $view = new \View\View();
 $view->assign('menuItems', $menuItems);

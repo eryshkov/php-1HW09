@@ -14,12 +14,12 @@ if (isset($_POST['password'])) {
     $userPassword = '';
 }
 
-$users = new \Model\Users();
+$users = new \Services\Users();
 if ($users->checkPassword($userName, $userPassword)) {
     $_SESSION['user'] = $userName;
 }
 
-$currentUser = $users->getCurrentUserFrom($_SESSION);
+$currentUser = $users->getCurrentUser();
 
 $menu = new \Model\Menu();
 $menuItems = $menu->getVisibleItems('admin');

@@ -3,8 +3,8 @@ session_start();
 
 require_once __DIR__ . '/autoload.php';
 
-$users = new \Model\Users();
-$currentUser = $users->getCurrentUserFrom($_SESSION);
+$users = new \Services\Users();
+$currentUser = $users->getCurrentUser();
 
 if (null === $currentUser) {
     header('Location:' . '/admin.php');

@@ -1,38 +1,38 @@
 <?php
 
-namespace Model;
+namespace Services;
 
 class Users
 {
     /**
      * @param string $userName
-     * @return User|null
+     * @return \Model\User|null
      */
-    private function getUserWith(string $userName): ?User
+    private function getUserWith(string $userName): ?\Model\User
     {
-        $db = new DB();
+        $db = new \Model\DB();
         $sql = 'SELECT * FROM users WHERE userName=:userName';
         $users = $db->query($sql, [':userName' => $userName]);
 
         foreach ($users as $user) {
-            return new User($user['userName'], $user['password']);
+            return new \Model\User($user['userName'], $user['password']);
         }
 
         return null;
     }
 
     /**
-     * @return User[]
+     * @return \Model\User[]
      */
     public function getUsersList(): array
     {
-        $db = new DB();
+        $db = new \Model\DB();
         $sql = 'SELECT * FROM users ORDER BY id';
         $users = $db->query($sql, []);
 
         $result = [];
         foreach ($users as $user) {
-            $result[] = new User($user['userName'], $user['password']);
+            $result[] = new \Model\User($user['userName'], $user['password']);
         }
 
         return $result;
@@ -70,18 +70,14 @@ class Users
     }
 
     /**
-     * @param array $session
-     * @return User|null
+     * @return \Model\User|null
      */
-    public function getCurrentUserFrom(array $session): ?User
+    public function getCurrentUser(): ?\Model\User
     {
-        if (isset($session['user'])) {
-            $user = $this->getUserWith($session['user']);
-            if (null !== $user) {
-                return $user;
-            }
-        } else {
-            return null;
+        if (isset($_SESSION['user'])) {
+            return $this->getUserWith($_SESSION['user']);
         }
+
+        return null;
     }
 }
