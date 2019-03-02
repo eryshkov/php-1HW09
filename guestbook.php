@@ -3,6 +3,12 @@ session_start();
 
 require_once __DIR__ . '/autoload.php';
 
+$view = new \View\View();
+
+if (isset($_GET['deleted'])) {
+    $view->assign('deleted', (bool)$_GET['deleted']);
+}
+
 $menu = new \Model\Menu();
 $menuItems = $menu->getVisibleItems('guestbook');
 
@@ -12,7 +18,6 @@ $guestBookRecords = $guestBook->getVisibleRecords();
 $users = new \Services\Users();
 $currentUser = $users->getCurrentUser();
 
-$view = new \View\View();
 $view->assign('menuItems', $menuItems);
 $view->assign('guestBookRecords', $guestBookRecords);
 $view->assign('currentUser', $currentUser);

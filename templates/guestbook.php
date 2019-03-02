@@ -46,6 +46,27 @@
 
     </div>
     <?php
+    if (isset($deleted)) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <?php
+                if ($deleted) {
+                    ?>
+                    <p class="alert-success">Запись удалена</p>
+                    <?php
+                } else {
+                    ?>
+                    <p class="alert-danger">Запись не удалось удалить</p>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
+    <?php
     foreach ($guestBookRecords as $record) {
         ?>
         <div class="row">
