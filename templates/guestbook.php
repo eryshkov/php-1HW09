@@ -49,6 +49,13 @@
     foreach ($guestBookRecords as $record) {
         ?>
         <div class="row">
+            <?php if (isset($currentUser)) {
+                ?>
+                <div class="col-auto">
+                    <a href="/delGuestBookRecord.php?id=<?php echo $record->getId(); ?>" class="btn btn-outline-danger">X</a>
+                </div>
+                <?php
+            } ?>
             <div class="col">
                 <blockquote class="blockquote">
                     <p class="mb-0"><?php echo $record->getText(); ?></p>
@@ -65,7 +72,8 @@
                   enctype="multipart/form-data">
                 <h5 class="mb-1 d-block">Новая запись:</h5>
                 <input class="mb-1" type="text" name="author" placeholder="Ваше имя">
-                <textarea class="d-block mb-1" name="message" rows="5" cols="30" placeholder="Запись в книгу"></textarea>
+                <textarea class="d-block mb-1" name="message" rows="5" cols="30"
+                          placeholder="Запись в книгу"></textarea>
                 <button class="d-block mb-1" type="submit">Отправить</button>
             </form>
         </div>
