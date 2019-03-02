@@ -21,4 +21,22 @@ class GuestBook
 
         return $result;
     }
+
+    public function saveRecord(GuestBookRecord $record): bool
+    {
+        $db = new DB();
+        $sql = 'INSERT INTO guestBookRecords (text, author, isHidden, isDeleted) VALUES (:recText,:author, :isHidden, :isDeleted)';
+        $result = $db->query($sql, [
+            ':recText' => $record->getText(),
+            ':author'  => $record->getAuthor(),
+            ':isHidden'  => (int)$record->isHidden(),
+            ':isDeleted'  => (int)$record->isDeleted(),
+        ]);
+
+        if (false === $result) {
+            return false;
+        }
+
+        return true;
+    }
 }

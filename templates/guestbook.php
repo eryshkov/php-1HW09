@@ -35,7 +35,7 @@
                         } else {
                             ?>
                             <li class="breadcrumb-item"><a
-                                href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
+                                    href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
                             </li><?php
                         }
                     }
@@ -51,14 +51,25 @@
         <div class="row">
             <div class="col">
                 <blockquote class="blockquote">
-                    <p class="mb-0"><?php echo $record->getText();?></p>
-                    <footer class="blockquote-footer"><?php echo $record->getAuthor();?></footer>
+                    <p class="mb-0"><?php echo $record->getText(); ?></p>
+                    <footer class="blockquote-footer"><?php echo $record->getAuthor(); ?></footer>
                 </blockquote>
             </div>
         </div>
         <?php
     }
     ?>
+    <div class="row">
+        <div class="col">
+            <form action="/addGuestBookRecord.php" method="post"
+                  enctype="multipart/form-data">
+                <h5>Новая запись:</h5><br>
+                <label class="mr-1">Ваше имя:</label><input type="text" name="author"><br>
+                <textarea name="message" rows="5" cols="30" placeholder="Запись в книгу"></textarea><br>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

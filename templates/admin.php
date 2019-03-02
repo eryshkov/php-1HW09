@@ -59,8 +59,8 @@
         <div class="row">
             <div class="col">
                 <form action="/admin.php" method="post">
-                    <label>Login: </label><input type="text" name="login"><br>
-                    <label>Password: </label><input type="password" name="password"><br>
+                    <label class="mr-1">Login:</label><input type="text" name="login"><br>
+                    <label class="mr-1">Password:</label><input type="password" name="password"><br>
                     <button type="submit">Login</button>
                 </form>
             </div>
