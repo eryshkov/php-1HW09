@@ -50,18 +50,25 @@
         ?>
         <div class="row">
             <div class="col-auto">
-                <p class="alert-danger"><?php echo $info; ?></p>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $info; ?>
+                </div>
             </div>
         </div>
         <?php
     }
     ?>
-    <?php if (null !== $currentUser) {
+    <?php if (isset($currentUser)) {
         ?>
         <div class="row">
             <div class="col">
-                <p>Welcome back <strong><?php echo $currentUser->getUserName(); ?></strong>! Admin mode is enabled for
-                    you</p>
+                <p>Добро пожаловать,&nbsp<strong><?php echo $currentUser->getUserName(); ?></strong>!</p>
+                <p>Вы можете:</p>
+                <ul>
+                    <li><a href="/" class="btn-link">Редактировать информацию о себе</a></li>
+                    <li><a href="/gallery.php" class="btn-link">Добавлять фотографии</a></li>
+                    <li><a href="/guestbook.php" class="btn-link">Удалять записи из гостевой книги</a></li>
+                </ul>
             </div>
         </div>
         <?php

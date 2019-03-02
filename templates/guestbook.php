@@ -53,11 +53,11 @@
                 <?php
                 if ($deleted) {
                     ?>
-                    <p class="alert-success">Запись удалена</p>
+                    <div class="alert alert-success" role="alert">Запись удалена успешно</div>
                     <?php
                 } else {
                     ?>
-                    <p class="alert-danger">Запись не удалось удалить</p>
+                    <div class="alert alert-danger" role="alert">Запись не удалось удалить</div>
                     <?php
                 }
                 ?>
