@@ -7,7 +7,7 @@ class Log
     /**
      * @var string
      */
-    protected $fileName = __DIR__ . '/../../img/log.txt';
+    protected $fileName = __DIR__ . '/../../logs/log.txt';
 
     /**
      * @param string $userName
