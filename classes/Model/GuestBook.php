@@ -22,6 +22,10 @@ class GuestBook
         return $result;
     }
 
+    /**
+     * @param GuestBookRecord $record
+     * @return bool
+     */
     public function saveRecord(GuestBookRecord $record): bool
     {
         $db = new DB();
@@ -39,9 +43,22 @@ class GuestBook
         return true;
     }
 
+    /**
+     * @param int $id
+     * @return bool
+     */
     public function deleteRecordWith(int $id): bool
     {
         $db = new DB();
         $sql = 'DELETE FROM guestBookRecords WHERE id=:delID';
+        $result = $db->query($sql, [
+            ':delID'  => $id,
+        ]);
+
+        if (false === $result) {
+            return false;
+        }
+
+        return true;
     }
 }
