@@ -62,8 +62,8 @@
     <div class="row">
         <?php foreach ($imagesList as $image) {
             ?>
-            <div class="col">
-                <img src="<?php echo $image->getUrl(); ?>" width="<?php echo $image->getWidth(); ?>"
+            <div class="col-auto">
+                <img class="img-thumbnail shadow-lg m-1 rounded" src="<?php echo $image->getUrl(); ?>" width="<?php echo $image->getWidth(); ?>"
                      height="<?php echo $image->getHeight(); ?>">
             </div>
             <?php
