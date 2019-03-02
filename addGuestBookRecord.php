@@ -33,7 +33,7 @@ if (isset($infoMessage)) {
 }
 
 $guestBook = new \Model\GuestBook();
-$newRecord = new \Model\GuestBookRecord(0, $message, $author, false, false);
+$newRecord = new \Model\GuestBookRecord(0, $message, $author, false);
 $result = $guestBook->saveRecord($newRecord);
 
 if (false === $result) {

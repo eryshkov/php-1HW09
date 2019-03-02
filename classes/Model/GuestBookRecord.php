@@ -8,7 +8,6 @@ class GuestBookRecord
     protected $text = '';
     protected $author = '';
     protected $isHidden = false;
-    protected $isDeleted = false;
 
     /**
      * GuestBookRecord constructor.
@@ -16,15 +15,13 @@ class GuestBookRecord
      * @param string $text
      * @param string $author
      * @param bool $isHidden
-     * @param bool $isDeleted
      */
-    public function __construct(int $id, string $text, string $author, bool $isHidden, bool $isDeleted)
+    public function __construct(int $id, string $text, string $author, bool $isHidden)
     {
         $this->id = $id;
         $this->text = $text;
         $this->author = $author;
         $this->isHidden = $isHidden;
-        $this->isDeleted = $isDeleted;
     }
 
     /**
@@ -58,14 +55,4 @@ class GuestBookRecord
     {
         return $this->isHidden;
     }
-
-    /**
-     * @return bool
-     */
-    public function isDeleted(): bool
-    {
-        return $this->isDeleted;
-    }
-
-
 }
