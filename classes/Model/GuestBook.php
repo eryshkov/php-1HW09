@@ -5,6 +5,9 @@ namespace Model;
 class GuestBook
 {
 
+    /**
+     * @return GuestBookRecord[]
+     */
     public function getVisibleRecords(): array
     {
         $db = new DB();
