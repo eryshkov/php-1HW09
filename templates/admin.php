@@ -45,6 +45,17 @@
         </div>
 
     </div>
+    <?php
+    if (isset($info)) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <p class="alert-danger"><?php echo $info; ?></p>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
     <?php if (null !== $currentUser) {
         ?>
         <div class="row">
