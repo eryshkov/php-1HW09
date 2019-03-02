@@ -45,7 +45,20 @@
         </div>
 
     </div>
-
+    <?php
+    foreach ($guestBookRecords as $record) {
+        ?>
+        <div class="row">
+            <div class="col">
+                <blockquote class="blockquote">
+                    <p class="mb-0"><?php echo $record->getText();?></p>
+                    <footer class="blockquote-footer"><?php echo $record->getAuthor();?></footer>
+                </blockquote>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 </body>
 </html>
