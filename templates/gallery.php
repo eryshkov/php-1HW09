@@ -45,6 +45,20 @@
         </div>
 
     </div>
+    <?php if (null !== $currentUser) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <p></p>
+                <form action="/saveImage.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="image">Новая картинка:</label><input class="form-control-file" type="file" name="image" id="image">
+                        <button type="submit" class="btn btn-primary my-1">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div><?php
+    } ?>
     <div class="row">
         <?php foreach ($imagesList as $image) {
             ?>
@@ -56,19 +70,6 @@
         }
         ?>
     </div>
-    <?php if (null !== $currentUser) {
-        ?>
-        <div class="row">
-            <div class="col-auto">
-                <p></p>
-                <form action="/saveImage.php" method="post" enctype="multipart/form-data">
-                    <label>Новая картинка:</label><input type="file" name="image">
-                    <br>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
-        </div><?php
-    } ?>
 </div>
 </body>
 </html>

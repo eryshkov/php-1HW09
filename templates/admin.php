@@ -75,11 +75,13 @@
     } else {
         ?>
         <div class="row">
-            <div class="col">
+            <div class="col-auto">
                 <form action="/admin.php" method="post">
-                    <input class="d-block mb-1" type="text" name="login" placeholder="Login">
-                    <input class="mb-1 d-block" type="password" name="password" placeholder="Password">
-                    <button class="d-block" type="submit">Login</button>
+                    <div class="form-group">
+                        <input class="form-control mb-1" type="text" name="login" placeholder="Login">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                        <button class="btn btn-primary my-1" type="submit">Login</button>
+                    </div>
                 </form>
             </div>
         </div>
