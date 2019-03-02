@@ -3,19 +3,25 @@
 require_once __DIR__ . '/autoload.php';
 
 if (isset($_POST['author'])) {
-    $author = $_POST['author'];
+    $author = trim($_POST['author']);
+    if (0 === strlen($author)) {
+        $infoMessage[] = 'Пожалуйста, укажите имя автора сообщения';
+    }
 } else {
-    $infoMessage[]= 'Пожалуйста, укажите имя автора сообщения';
+    $infoMessage[] = 'Пожалуйста, укажите имя автора сообщения';
 }
 
 if (isset($_POST['message'])) {
-    $message = $_POST['message'];
+    $message = trim($_POST['message']);
+    if (0 === strlen($message)) {
+        $infoMessage[] = 'Текст сообщения не может быть пустым';
+    }
 } else {
-    $infoMessage[]= 'Текст сообщения не может быть пустым';
+    $infoMessage[] = 'Текст сообщения не может быть пустым';
 }
 
 $menu = new \Model\Menu();
-$menuItems = $menu->getVisibleItems('gallery');
+$menuItems = $menu->getVisibleItems('guestbook');
 
 $view = new \View\View();
 
