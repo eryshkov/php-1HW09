@@ -24,9 +24,9 @@ $menu = new \Model\Menu();
 $menuItems = $menu->getVisibleItems('guestbook');
 
 $view = new \View\View();
+$view->assign('menuItems', $menuItems);
 
 if (isset($infoMessage)) {
-    $view->assign('menuItems', $menuItems);
     $view->assign('info', implode('. ', $infoMessage));
     $view->display(__DIR__ . '/templates/info.php');
     exit();
@@ -37,7 +37,6 @@ $newRecord = new \Model\GuestBookRecord(0, $message, $author, false, false);
 $result = $guestBook->saveRecord($newRecord);
 
 if (false === $result) {
-    $view->assign('menuItems', $menuItems);
     $view->assign('info', 'Не удалось записать сообщение');
     $view->display(__DIR__ . '/templates/info.php');
     exit();
