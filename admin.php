@@ -20,7 +20,7 @@ if (isset($userName, $userPassword)) {
     if ($users->checkPassword($userName, $userPassword)) {
         $_SESSION['user'] = $userName;
     }else{
-        $view->assign('info', 'Имя пользователя и пароль не верные');
+        $view->assign('info', 'Имя пользователя и пароль неверные');
     }
 }
 
