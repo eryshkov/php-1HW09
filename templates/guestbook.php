@@ -88,14 +88,15 @@
     }
     ?>
     <div class="row">
-        <div class="col">
+        <div class="col-auto">
             <form action="/addGuestBookRecord.php" method="post"
                   enctype="multipart/form-data">
-                <h5 class="mb-1 d-block">Новая запись:</h5>
-                <input class="mb-1" type="text" name="author" placeholder="Ваше имя">
-                <textarea class="d-block mb-1" name="message" rows="5" cols="30"
-                          placeholder="Запись в книгу"></textarea>
-                <button class="d-block mb-1" type="submit">Отправить</button>
+                <div class="form-group">
+                    <input class="mb-1 form-control" type="text" name="author" placeholder="Ваше имя">
+                    <textarea class="form-control mb-1" name="message" rows="5" cols="30"
+                              placeholder="Запись в книгу"></textarea>
+                    <button class="btn btn-primary" type="submit">Отправить</button>
+                </div>
             </form>
         </div>
     </div>
