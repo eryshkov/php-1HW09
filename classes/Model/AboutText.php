@@ -44,4 +44,24 @@ class AboutText
 
         return null;
     }
+
+    /**
+     * @param AboutTextBlock $textBlock
+     * @return bool
+     */
+    public function updateTextBlock(AboutTextBlock $textBlock): bool
+    {
+        $db = new DB();
+        $sql = 'UPDATE about SET blockText=:blockText WHERE id=:id';
+        $blocks = $db->query($sql, [
+            ':id' => $textBlock->getId(),
+            ':blockText' => $textBlock->getText(),
+        ]);
+
+        if (false === $blocks) {
+            return false;
+        }
+
+        return true;
+    }
 }
