@@ -53,7 +53,7 @@
                 <form action="/saveAboutText.php" method="post"
                       enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?php echo $textBlock->getId(); ?>">
-                    <input type="hidden" name="isHidden" value="<?php echo $textBlock->isHidden(); ?>">
+                    <input type="hidden" name="isHidden" value="<?php echo (int)$textBlock->isHidden(); ?>">
                     <input type="hidden" name="order" value="<?php echo $textBlock->getOrder(); ?>">
                     <div class="form-group">
                         <textarea class="form-control mb-1" name="text" rows="5" cols="30"><?php echo $textBlock->getText(); ?></textarea>
