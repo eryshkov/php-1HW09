@@ -48,9 +48,14 @@
     <?php foreach ($textBlocks as $block) {
         ?>
         <div class="row">
-            <div class="col-auto">
-                <a href="/updateAboutText.php?id=<?php echo $block->getId(); ?>" class="btn btn-primary">✎</a>
-            </div>
+            <?php if (isset($currentUser)) {
+                ?>
+                <div class="col-auto">
+                    <a href="/updateAboutText.php?id=<?php echo $block->getId(); ?>"
+                       class="btn btn-outline-secondary">✎</a>
+                </div>
+                <?php
+            } ?>
             <div class="col">
                 <p><?php echo $block->getText(); ?></p>
             </div>
