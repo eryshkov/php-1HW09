@@ -11,7 +11,7 @@
 </p>
 
 ## Информация для проверяющего
-* бамп БД находится в папке `db_dump`
+* дамп БД находится в папке `db_dump`
 
 ## Main functionality
 * uses MySQL database
