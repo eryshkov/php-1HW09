@@ -45,19 +45,25 @@
         </div>
 
     </div>
-    <?php foreach ($textBlocks as $block) {
+    <?php
+    if (isset($currentUser)) {
         ?>
         <div class="row">
-            <?php if (isset($currentUser)) {
-                ?>
-                <div class="col-auto">
-                    <a href="/updateAboutText.php?id=<?php echo $block->getId(); ?>"
-                       class="btn btn-outline-secondary">✎</a>
-                </div>
-                <?php
-            } ?>
-            <div class="col">
-                <p><?php echo $block->getText(); ?></p>
+            <div class="col-auto">
+                <form action="/updateAboutText.php" method="post"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <textarea class="form-control mb-1" name="text" rows="5" cols="30"><?php echo $textBlock->getText(); ?></textarea>
+                        <div class="row">
+                            <div class="col-auto">
+                                <a href="/" class="btn-outline-secondary btn">Отмена</a>
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" type="submit">Сохранить</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
         <?php
