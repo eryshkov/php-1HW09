@@ -9,7 +9,7 @@ $menuItems = $menu->getVisibleItems('index');
 $text = new \Model\AboutText();
 $textBlocks = $text->getVisibleBlocks();
 
-$users = new \Services\Users();
+$users = new Model\Users();
 $currentUser = $users->getCurrentUser();
 
 $view = new \View\View();

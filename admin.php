@@ -14,7 +14,7 @@ $menuItems = $menu->getVisibleItems('admin');
 $view = new \View\View();
 $view->assign('menuItems', $menuItems);
 
-$users = new \Services\Users();
+$users = new Model\Users();
 
 if (isset($userName, $userPassword)) {
     if ($users->checkPassword($userName, $userPassword)) {

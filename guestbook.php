@@ -15,7 +15,7 @@ $menuItems = $menu->getVisibleItems('guestbook');
 $guestBook = new \Model\GuestBook();
 $guestBookRecords = $guestBook->getVisibleRecords();
 
-$users = new \Services\Users();
+$users = new Model\Users();
 $currentUser = $users->getCurrentUser();
 
 $view->assign('menuItems', $menuItems);

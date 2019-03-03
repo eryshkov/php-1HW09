@@ -9,7 +9,7 @@ $menuItems = $menu->getVisibleItems('gallery');
 $images = new \Model\Images();
 $imagesList = $images->getAllImages();
 
-$users = new \Services\Users();
+$users = new Model\Users();
 $currentUser = $users->getCurrentUser();
 
 $view = new \View\View();

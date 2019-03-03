@@ -3,7 +3,7 @@ session_start();
 
 require_once __DIR__ . '/autoload.php';
 
-$users = new \Services\Users();
+$users = new Model\Users();
 $currentUser = $users->getCurrentUser();
 
 if (null === $currentUser) {

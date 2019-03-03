@@ -1,39 +1,39 @@
 <?php
 
-namespace Services;
+namespace Model;
 
 class Users
 {
     /**
      * @param string $userName
-     * @return \Model\User|null
+     * @return User|null
      */
-    private function getUserWith(string $userName): ?\Model\User
+    private function getUserWith(string $userName): ?User
     {
-        $db = new \Model\DB();
+        $db = new DB();
         $sql = 'SELECT * FROM users WHERE userName=:userName';
         $users = $db->query($sql, [':userName' => $userName]);
 
         $user = reset($users);
         if (false !== $user) {
-            return new \Model\User($user['userName'], $user['password']);
+            return new User($user['userName'], $user['password']);
         }
 
         return null;
     }
 
     /**
-     * @return \Model\User[]
+     * @return User[]
      */
     public function getUsersList(): array
     {
-        $db = new \Model\DB();
+        $db = new DB();
         $sql = 'SELECT * FROM users ORDER BY id';
         $users = $db->query($sql, []);
 
         $result = [];
         foreach ($users as $user) {
-            $result[] = new \Model\User($user['userName'], $user['password']);
+            $result[] = new User($user['userName'], $user['password']);
         }
 
         return $result;
@@ -69,9 +69,9 @@ class Users
     }
 
     /**
-     * @return \Model\User|null
+     * @return User|null
      */
-    public function getCurrentUser(): ?\Model\User
+    public function getCurrentUser(): ?User
     {
         if (isset($_SESSION['user'])) {
             return $this->getUserWith($_SESSION['user']);
