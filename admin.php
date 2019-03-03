@@ -3,11 +3,6 @@ session_start();
 
 require_once __DIR__ . '/autoload.php';
 
-if (isset($_POST['login'], $_POST['password'])) {
-    $userName = $_POST['login'];
-    $userPassword = $_POST['password'];
-}
-
 $menu = new \Model\Menu();
 $menuItems = $menu->getVisibleItems('admin');
 
@@ -15,6 +10,11 @@ $view = new \View\View();
 $view->assign('menuItems', $menuItems);
 
 $users = new Model\Users();
+
+if (isset($_POST['login'], $_POST['password'])) {
+    $userName = $_POST['login'];
+    $userPassword = $_POST['password'];
+}
 
 if (isset($userName, $userPassword)) {
     if ($users->checkPassword($userName, $userPassword)) {

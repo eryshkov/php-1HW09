@@ -31,11 +31,13 @@
                         if ($item->isCurrent()) {
                             ?>
                             <li class="breadcrumb-item active"
-                                aria-current="page"><?php echo $item->getDisplayName(); ?></li><?php
+                                aria-current="page"><?php echo $item->getDisplayName();
+                            $currentMenuItem = $item;
+                            ?></li><?php
                         } else {
                             ?>
                             <li class="breadcrumb-item"><a
-                                href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
+                                    href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
                             </li><?php
                         }
                     }
@@ -50,6 +52,15 @@
             <p><?php echo $info; ?></p>
         </div>
     </div>
+    <?php if (isset($currentMenuItem)) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <a href="/<?php echo $currentMenuItem->getName(); ?>.php" class="btn btn-outline-info">Вернуться назад</a>
+            </div>
+        </div>
+        <?php
+    } ?>
 </div>
 </body>
 </html>
