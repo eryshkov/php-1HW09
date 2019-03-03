@@ -15,12 +15,9 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $aboutTextBlocks = new \Model\AboutText();
     $result = $aboutTextBlocks->getTextBlockWith($id);
-    var_dump($result);
-    die();
 
     if (isset($result)) {
-        header('Location:' . '/index.php?edited=1');
-        exit();
+        //show edit form
     }
 }
 
