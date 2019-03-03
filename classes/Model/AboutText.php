@@ -15,7 +15,7 @@ class AboutText
 
         $result = [];
         foreach ($blocks as $block) {
-            $result[] = new AboutTextBlock($block['blockText'], $block['order'], $block['isHidden']);
+            $result[] = new AboutTextBlock($block['id'],$block['blockText'], $block['order'], $block['isHidden']);
         }
 
         return $result;
