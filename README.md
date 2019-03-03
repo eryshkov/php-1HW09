@@ -14,6 +14,7 @@
 * дамп БД находится в папке `db_dump`
 
 ## Main functionality
+* MVC pattern
 * uses MySQL database
 * classes and objects
 * view separation
