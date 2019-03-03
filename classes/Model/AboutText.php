@@ -20,4 +20,28 @@ class AboutText
 
         return $result;
     }
+
+    /**
+     * @param int $id
+     * @return AboutTextBlock|null
+     */
+    public function getTextBlockWith(int $id): ?AboutTextBlock
+    {
+        $db = new DB();
+        $sql = 'SELECT * FROM about WHERE id=:id ORDER BY `order`';
+        $blocks = $db->query($sql, [
+            ':id' => $id,
+        ]);
+
+        if (false === $blocks) {
+            return null;
+        }
+
+        if ((bool)$blocks) {
+            $block = reset($blocks);
+            return new AboutTextBlock($block['id'],$block['blockText'], $block['order'], $block['isHidden']);
+        }
+
+        return null;
+    }
 }
