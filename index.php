@@ -13,6 +13,11 @@ $users = new \Services\Users();
 $currentUser = $users->getCurrentUser();
 
 $view = new \View\View();
+
+if (isset($_GET['edited'])) {
+    $view->assign('edited', (bool)$_GET['edited']);
+}
+
 $view->assign('menuItems', $menuItems);
 $view->assign('textBlocks', $textBlocks);
 $view->assign('currentUser', $currentUser);

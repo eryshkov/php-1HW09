@@ -45,6 +45,27 @@
         </div>
 
     </div>
+    <?php
+    if (isset($edited)) {
+        ?>
+        <div class="row">
+            <div class="col-auto">
+                <?php
+                if ($edited) {
+                    ?>
+                    <div class="alert alert-success" role="alert">Запись изменена успешно</div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="alert alert-danger" role="alert">Запись не удалось изменить</div>
+                    <?php
+                }
+                ?>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
     <?php foreach ($textBlocks as $block) {
         ?>
         <div class="row">
