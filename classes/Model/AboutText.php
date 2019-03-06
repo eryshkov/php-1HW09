@@ -15,7 +15,7 @@ class AboutText
 
         $result = [];
         foreach ($blocks as $block) {
-            $result[] = new AboutTextBlock($block['id'],$block['blockText'], $block['order'], $block['isHidden']);
+            $result[] = new AboutTextBlock($block['id'], $block['blockText'], $block['order'], $block['isHidden']);
         }
 
         return $result;
@@ -39,7 +39,7 @@ class AboutText
 
         if ((bool)$blocks) {
             $block = reset($blocks);
-            return new AboutTextBlock($block['id'],$block['blockText'], $block['order'], $block['isHidden']);
+            return new AboutTextBlock($block['id'], $block['blockText'], $block['order'], $block['isHidden']);
         }
 
         return null;
@@ -54,7 +54,7 @@ class AboutText
         $db = new DB();
         $sql = 'UPDATE about SET blockText=:blockText WHERE id=:id';
         $blocks = $db->query($sql, [
-            ':id' => $textBlock->getId(),
+            ':id'        => $textBlock->getId(),
             ':blockText' => $textBlock->getText(),
         ]);
 

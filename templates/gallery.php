@@ -52,7 +52,8 @@
                 <p></p>
                 <form action="/saveImage.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="image">Новая картинка:</label><input class="form-control-file" type="file" name="image" id="image">
+                        <label for="image">Новая картинка:</label><input class="form-control-file" type="file"
+                                                                         name="image" id="image">
                         <button type="submit" class="btn btn-primary my-1">Send</button>
                     </div>
                 </form>
@@ -63,7 +64,8 @@
         <?php foreach ($imagesList as $image) {
             ?>
             <div class="col-auto">
-                <img class="img-thumbnail shadow-lg m-1 rounded" src="<?php echo $image->getUrl(); ?>" width="<?php echo $image->getWidth(); ?>"
+                <img class="img-thumbnail shadow-lg m-1 rounded" src="<?php echo $image->getUrl(); ?>"
+                     width="<?php echo $image->getWidth(); ?>"
                      height="<?php echo $image->getHeight(); ?>">
             </div>
             <?php

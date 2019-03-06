@@ -35,7 +35,7 @@
                         } else {
                             ?>
                             <li class="breadcrumb-item"><a
-                                href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
+                                    href="/<?php echo $item->getName(); ?>.php"><?php echo $item->getDisplayName(); ?></a>
                             </li><?php
                         }
                     }
@@ -56,7 +56,8 @@
                     <input type="hidden" name="isHidden" value="<?php echo (int)$textBlock->isHidden(); ?>">
                     <input type="hidden" name="order" value="<?php echo $textBlock->getOrder(); ?>">
                     <div class="form-group">
-                        <textarea class="form-control mb-1" name="text" rows="5" cols="30"><?php echo $textBlock->getText(); ?></textarea>
+                        <textarea class="form-control mb-1" name="text" rows="5"
+                                  cols="30"><?php echo $textBlock->getText(); ?></textarea>
                         <div class="row">
                             <div class="col-auto">
                                 <a href="/" class="btn-outline-secondary btn">Отмена</a>

@@ -31,9 +31,9 @@ class GuestBook
         $db = new DB();
         $sql = 'INSERT INTO guestBookRecords (text, author, isHidden) VALUES (:recText,:author, :isHidden)';
         $result = $db->query($sql, [
-            ':recText' => $record->getText(),
-            ':author'  => $record->getAuthor(),
-            ':isHidden'  => (int)$record->isHidden(),
+            ':recText'  => $record->getText(),
+            ':author'   => $record->getAuthor(),
+            ':isHidden' => (int)$record->isHidden(),
         ]);
 
         if (false === $result) {
@@ -52,7 +52,7 @@ class GuestBook
         $db = new DB();
         $sql = 'DELETE FROM guestBookRecords WHERE id=:delID';
         $result = $db->query($sql, [
-            ':delID'  => $id,
+            ':delID' => $id,
         ]);
 
         if (false === $result) {

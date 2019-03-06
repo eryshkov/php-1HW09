@@ -56,7 +56,8 @@
         ?>
         <div class="row">
             <div class="col-auto">
-                <a href="/<?php echo $currentMenuItem->getName(); ?>.php" class="btn btn-outline-info">Вернуться назад</a>
+                <a href="/<?php echo $currentMenuItem->getName(); ?>.php" class="btn btn-outline-info">Вернуться
+                    назад</a>
             </div>
         </div>
         <?php

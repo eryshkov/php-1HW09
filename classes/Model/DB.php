@@ -1,4 +1,5 @@
 <?php
+
 namespace Model;
 class DB
 {
@@ -17,7 +18,7 @@ class DB
         $this->dbh->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
     }
 
-    public function execute(string $sql):bool
+    public function execute(string $sql): bool
     {
         $sth = $this->dbh->prepare($sql);
 
@@ -38,7 +39,7 @@ class DB
 
         if ($result) {
             return $sth->fetchAll();
-        }else{
+        } else {
             return false;
         }
     }

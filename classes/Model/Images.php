@@ -24,7 +24,7 @@ class Images
 
             if ($isImage) {
                 $size = getimagesize($filePath);
-                [$width , $height] = $size;
+                [$width, $height] = $size;
                 $images[] = new Image($filePath, $this->urlToImagesFolder . $item, $width, $height);
             }
 
