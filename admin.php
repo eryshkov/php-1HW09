@@ -14,9 +14,7 @@ $users = new Model\Users();
 if (isset($_POST['login'], $_POST['password'])) {
     $userName = $_POST['login'];
     $userPassword = $_POST['password'];
-}
 
-if (isset($userName, $userPassword)) {
     if ($users->checkPassword($userName, $userPassword)) {
         $_SESSION['user'] = $userName;
     } else {
