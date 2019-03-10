@@ -12,7 +12,7 @@ if (null === $currentUser) {
 }
 
 $imageUploader = new \Services\Uploader('image');
-$uploadResult = $imageUploader->upload();
+$uploadResult = $imageUploader->uploadImage();
 
 if (true === $uploadResult) {
     $log = new \Model\Log();
