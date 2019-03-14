@@ -37,7 +37,7 @@ class AboutText
             return null;
         }
 
-        if ((bool)$blocks) {
+        if (is_array($blocks) && !empty($blocks)) {
             $block = reset($blocks);
             return new AboutTextBlock($block['id'], $block['blockText'], $block['order'], $block['isHidden']);
         }
