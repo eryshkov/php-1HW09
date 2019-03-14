@@ -7,5 +7,5 @@ CREATE TABLE about (
     UNIQUE (id)
 );
 
-INSERT INTO hw09.about (id, blockText, isHidden, `order`) VALUES (1, 'Text about me', 0, 1);
-INSERT INTO hw09.about (id, blockText, isHidden, `order`) VALUES (2, 'Secondly about me', 0, 2);
+INSERT INTO hw09.about (blockText, isHidden, `order`) VALUES ('Программирую на php', 0, 1);
+INSERT INTO hw09.about (blockText, isHidden, `order`) VALUES ('Программирую на Swift', 0, 2);

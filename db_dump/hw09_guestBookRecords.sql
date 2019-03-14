@@ -7,4 +7,4 @@ CREATE TABLE guestBookRecords (
     UNIQUE (id)
 );
 
-INSERT INTO hw09.guestBookRecords (id, text, author, isHidden) VALUES (5, 'В лесу родилась ёлочка', 'Евгений', 0);
+INSERT INTO hw09.guestBookRecords (text, author, isHidden) VALUES ('В лесу родилась ёлочка', 'Евгений', 0);
