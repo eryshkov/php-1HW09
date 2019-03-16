@@ -25,7 +25,7 @@ class AboutText
      * @param int $id
      * @return AboutTextBlock|null
      */
-    public function getTextBlockWith(int $id): ?AboutTextBlock
+    public function getTextBlockBy(int $id): ?AboutTextBlock
     {
         $db = new DB();
         $sql = 'SELECT * FROM about WHERE id=:id ORDER BY `order`';

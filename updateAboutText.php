@@ -14,7 +14,7 @@ if (null === $currentUser) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $aboutTextBlocks = new \Model\AboutText();
-    $textBlock = $aboutTextBlocks->getTextBlockWith($id);
+    $textBlock = $aboutTextBlocks->getTextBlockBy($id);
 } else {
     header('Location:' . '/index.php?edited=0');
     exit();
