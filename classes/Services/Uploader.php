@@ -1,5 +1,6 @@
 <?php
 
+namespace Services;
 class Uploader
 {
     protected $formFieldName = '';
@@ -37,7 +38,7 @@ class Uploader
             $isImage = strpos($imageMimeType, 'image') === 0;
 
             if (true === $isImage) {
-                return move_uploaded_file($savedImagePath, __DIR__ . '/../img/' . $imageName);
+                return move_uploaded_file($savedImagePath, __DIR__ . '/../../img/' . $imageName);
             }
         }
         return false;
@@ -54,7 +55,7 @@ class Uploader
             $savedFilePath = $savedFile['tmp_name'];
             $fileName = $savedFile['name'];
 
-            $destFilePath = __DIR__ . '/../file_storage/' . $fileName;
+            $destFilePath = __DIR__ . '/../../file_storage/' . $fileName;
 
             return move_uploaded_file($savedFilePath, $destFilePath);
         }
