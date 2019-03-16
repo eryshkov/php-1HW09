@@ -1,11 +1,8 @@
 <?php
 
-namespace Services;
-
 class Uploader
 {
     protected $formFieldName = '';
-    protected $savedFile = '';
 
     public function __construct($formFieldName)
     {
@@ -31,16 +28,16 @@ class Uploader
     public function uploadImage(): bool
     {
         if ($this->isUploaded()) {
-            $this->savedFile = $_FILES[$this->formFieldName];
+            $savedFile = $_FILES[$this->formFieldName];
 
-            $savedImagePath = $this->savedFile['tmp_name'];
-            $imageName = $this->savedFile['name'];
-            $imageMimeType = $this->savedFile['type'];
+            $savedImagePath = $savedFile['tmp_name'];
+            $imageName = $savedFile['name'];
+            $imageMimeType = $savedFile['type'];
 
             $isImage = strpos($imageMimeType, 'image') === 0;
 
             if (true === $isImage) {
-                return move_uploaded_file($savedImagePath, __DIR__ . '/../../img/' . $imageName);
+                return move_uploaded_file($savedImagePath, __DIR__ . '/../img/' . $imageName);
             }
         }
         return false;
@@ -52,16 +49,14 @@ class Uploader
     public function upload(): bool
     {
         if ($this->isUploaded()) {
-            $this->savedFile = $_FILES[$this->formFieldName];
+            $savedFile = $_FILES[$this->formFieldName];
 
-            $savedFilePath = $this->savedFile['tmp_name'];
-            $fileName = $this->savedFile['name'];
+            $savedFilePath = $savedFile['tmp_name'];
+            $fileName = $savedFile['name'];
 
-            $destFilePath = __DIR__ . '/../../file_storage/' . $fileName;
+            $destFilePath = __DIR__ . '/../file_storage/' . $fileName;
 
-            $result = move_uploaded_file($savedFilePath, $destFilePath);
-
-            return $result;
+            return move_uploaded_file($savedFilePath, $destFilePath);
         }
 
         return false;
